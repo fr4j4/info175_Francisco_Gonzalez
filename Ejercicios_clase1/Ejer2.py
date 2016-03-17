@@ -1,13 +1,22 @@
-def ordenalista(l):
-	return sorted(l)
+def imprimeLista(l):
+	lista=sorted(l)
+	linea=""
+	for i in range (0,len(lista)):
+		if i != len(lista)-1:
+			#print lista[i],",",
+			linea+=lista[i]+","
+		else:
+			#print lista[i]
+			linea+=lista[i]
+	print linea
 
 if __name__=="__main__":
 	c=0
-	print "Palabras en la lista: ",c
 	repite=True
 	palabra=""
 	lista=[]
 	while repite:
+		print ""
 		print "Palabras en la lista: ",c
 		print "ingrese palabra ",(c+1)
 		print "no ingrese nada para terminar"
@@ -17,9 +26,6 @@ if __name__=="__main__":
 			c+=1
 		else:
 			repite=False
-
-	lista=ordenalista(lista)
-
-	for l in lista:
-		print l
+	print "Lista ordenada:"
+	imprimeLista(lista);
 
