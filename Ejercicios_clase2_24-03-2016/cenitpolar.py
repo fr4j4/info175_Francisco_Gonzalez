@@ -28,6 +28,28 @@ def cenitpolar(input):
 			aux="i"
 		elif c=="r":
 			aux="t"
+
+		elif c=="C":
+			aux="P"
+		elif c=="E":
+			aux="O"
+		elif c=="N":
+			aux="L"
+		elif c=="I":
+			aux="A"
+		elif c=="T":
+			aux="R"
+
+		elif c=="P":
+			aux="C"
+		elif c=="O":
+			aux="E"
+		elif c=="L":
+			aux="N"
+		elif c=="A":
+			aux="I"
+		elif c=="R":
+			aux="T"
 		output+=aux;
 	return output
 
