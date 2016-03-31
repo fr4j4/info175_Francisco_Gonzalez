@@ -15,6 +15,7 @@ class Auto(object):
 		if self.encendido:
 			if self.rendimiento*self.bencina>=distancia:
 				print "moviendo...\n...Se ha desplazado "+str(distancia)+" km"
+				self.distancia-=distancia/self.rendimiento
 			else:
 				print "falta bencina para mover"
 		else:
