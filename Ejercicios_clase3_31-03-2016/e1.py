@@ -25,7 +25,7 @@ class Auto(object):
 	def get_bencina(self):
 		return self.bencina
 	def cargar_bencina(self,b):
-		if self.encendido:
+		if self.encendido==False:
 			print ("se ha cargado "+str(b)+" lt. de bencina")
 			self.bencina+=b
 		else:
