@@ -27,14 +27,33 @@ class nota(object):
 		self.carrera=carrera
 
 class alumno(persona):
-	def __init__(self,nombre,rut,f_nac,genero):
+	def __init__(self,nombre,rut,f_nac,genero,carrera,promocion,correo):
 		super(alumno,self).__init__(nombre,rut,f_nac,genero)
+		self.promocion=promocion
+		self.carrera=carrera
+		self.corre=correo
 		self.notas=[]
 	def agregar_nota(self,valor,ponderacion,ramo,carrera):
 		self.notas.append(nota(valor,ponderacion,ramo,carrera))
-	def promedio_por_ramo():
+	def promedio_por_ramo(self):
+		ramos={}#diccionario
+		for i in range(0,len(self.notas)):
+			if ramos.has_key(self.notas[i].ramo)==False:
+				ramos[self.notas[i].ramo]=0
+			ramos[self.notas[i].ramo]+=self.notas[i].valor*self.notas[i].ponderacion
 		
+		print ramos
+	def pga(self):
+		pass
+	
 
 
 
-a1=alumno("Francisco","18008790-7",1992,"M")
+a1=alumno("Francisco","18008790-7",1992,"M","ICI","2012","francisco.gonzalez@uach.cl")
+a1.agregar_nota(7.0,0.25,"Programacion","ICI")
+a1.agregar_nota(7.0,0.25,"Programacion","ICI")
+a1.agregar_nota(7.0,0.25,"Programacion","ICI")
+a1.agregar_nota(7.0,0.25,"Programacion","ICI")
+a1.agregar_nota(7.0,0.5,"Lenguaje","ICI")
+a1.agregar_nota(7.0,0.5,"Lenguaje","ICI")
+a1.promedio_por_ramo()
