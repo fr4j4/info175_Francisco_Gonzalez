@@ -33,23 +33,29 @@ class alumno(persona):
 		self.carrera=carrera
 		self.corre=correo
 		self.notas=[]
+		self.ramos={}#diccionario de notas por ramo
+		self.pga=0
 	def agregar_nota(self,valor,ponderacion,ramo,carrera):
 		self.notas.append(nota(valor,ponderacion,ramo,carrera))
 		print "nota agregada"
 		print "             ramo: "+ramo+" valor: "+str(valor)+" ponderacion: "+str(ponderacion)+" carrera: "+carrera
 	def promedio_por_ramo(self):
-		ramos={}#diccionario
+
 		for i in range(0,len(self.notas)):
-			if ramos.has_key(self.notas[i].ramo)==False:
-				ramos[self.notas[i].ramo]=0
-			ramos[self.notas[i].ramo]+=self.notas[i].valor*self.notas[i].ponderacion
+			if self.ramos.has_key(self.notas[i].ramo)==False:
+				self.ramos[self.notas[i].ramo]=0
+			self.ramos[self.notas[i].ramo]+=self.notas[i].valor*self.notas[i].ponderacion
 
 		print "Notas por ramos:"
-		for ramo,nota in ramos.items():
+		for ramo,nota in self.ramos.items():
 			print ramo +" : "+str(nota)
-	def pga(self):
-		pass
-	
+	def get_pga(self):#promedio general alumno
+		c=0
+		for ramo,nota in self.ramos.items():
+			self.pga+=nota
+			c+=1
+		self.pga/=c
+		print "PGA: "+str(self.pga)
 
 
 
@@ -61,3 +67,4 @@ a1.agregar_nota(7.0,0.25,"Programacion","ICI")
 a1.agregar_nota(7.0,0.5,"Lenguaje","ICI")
 a1.agregar_nota(7.0,0.5,"Lenguaje","ICI")
 a1.promedio_por_ramo()
+a1.get_pga()
