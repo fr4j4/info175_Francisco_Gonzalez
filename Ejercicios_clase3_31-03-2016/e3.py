@@ -41,8 +41,10 @@ class alumno(persona):
 			if ramos.has_key(self.notas[i].ramo)==False:
 				ramos[self.notas[i].ramo]=0
 			ramos[self.notas[i].ramo]+=self.notas[i].valor*self.notas[i].ponderacion
-		
-		print ramos
+
+		print "Notas por ramos:"
+		for ramo,nota in ramos.items():
+			print ramo +" : "+str(nota)
 	def pga(self):
 		pass
 	
