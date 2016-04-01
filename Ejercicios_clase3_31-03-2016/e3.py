@@ -35,6 +35,8 @@ class alumno(persona):
 		self.notas=[]
 	def agregar_nota(self,valor,ponderacion,ramo,carrera):
 		self.notas.append(nota(valor,ponderacion,ramo,carrera))
+		print "nota agregada"
+		print "             ramo: "+ramo+" valor: "+str(valor)+" ponderacion: "+str(ponderacion)+" carrera: "+carrera
 	def promedio_por_ramo(self):
 		ramos={}#diccionario
 		for i in range(0,len(self.notas)):
