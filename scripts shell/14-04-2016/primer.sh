@@ -1,3 +1,4 @@
 #! /bin/bash
 #primer script
-echo hola mundo
+STRING="Hola Mundo"
+echo $STRING
